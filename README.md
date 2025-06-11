@@ -79,7 +79,7 @@ With this robust and future-ready stack, **Seva** is not just a chatbot—it’s
 ## 1. Clone the Project Repository
 
 ```bash
-git clone https://github.com/yourusername/your_project.git
+git clone(https://github.com/namansharanyadav/NeuralTech-Seva)
 
 2. Open the Project Folder
 
