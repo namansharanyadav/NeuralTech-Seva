@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Government Schemes Portal</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+    }
+
+    header {
+      background-color: #0b5394;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .scheme-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .scheme-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .scheme-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .scheme-card h2 {
+      color: #0b5394;
+      margin-bottom: 0.5rem;
+    }
+
+    .scheme-card a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #0b5394;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .scheme-card a:hover {
+      background-color: #073763;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #e1e1e1;
+      color: #333;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Government Schemes Portal</h1>
+    <p>Explore various schemes for citizens</p>
+  </header>
+
+  <section class="scheme-list">
+    <div class="scheme-card">
+      <h2>PM Awas Yojana</h2>
+      <p>Affordable housing scheme for all.</p>
+      <a href="https://pmay.gov.in/" target="_blank">View Details</a>
+    </div>
+    <div class="scheme-card">
+      <h2>PM Kisan Samman Nidhi</h2>
+      <p>₹6000 yearly benefit to farmers.</p>
+      <a href="https://pmkisan.gov.in/" target="_blank">View Details</a>
+    </div>
+    <div class="scheme-card">
+      <h2>Digital India</h2>
+      <p>Transforming India into a digitally empowered society.</p>
+      <a href="https://digitalindia.gov.in/" target="_blank">View Details</a>
+    </div>
+    <div class="scheme-card">
+      <h2>Ayushman Bharat</h2>
+      <p>Health coverage for poor and vulnerable families.</p>
+      <a href="https://pmjay.gov.in/" target="_blank">View Details</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Government of India</p>
+  </footer>
+
+  <script>
+    // Make entire scheme card clickable
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.scheme-card');
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          const link = card.querySelector('a');
+          if (link) {
+            window.open(link.href, '_blank');
+          }
+        });
+      });
+    });
+
+    // Watson Assistant Integration
+    window.watsonAssistantChatOptions = {
+      integrationID: "c9932e8e-035c-4295-afc9-94bb43c5f40a",
+      region: "au-syd",
+      serviceInstanceID: "50335641-49fd-4d17-a92d-72bf99d2041f",
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t = document.createElement('script');
+      t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
+              (window.watsonAssistantChatOptions.clientVersion || 'latest') + 
+              "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+</html>
